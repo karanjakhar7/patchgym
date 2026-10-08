@@ -1,0 +1,41 @@
+$ docker info --format '{{.ServerVersion}}'
+29.5.2
+[docker: exit=0 timeout=False duration_ms=1029]
+$ docker create [redacted]
+5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d
+[docker: exit=0 timeout=False duration_ms=54]
+$ docker start 5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d
+5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d
+[docker: exit=0 timeout=False duration_ms=96]
+$ docker exec 5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d /bin/sh -c 'cd /workspace && git reset --hard HEAD && git clean -fd'
+HEAD is now at 6ac88b2 Add ordinary visible regression test
+[docker: exit=0 timeout=False duration_ms=61]
+$ docker exec 5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d /bin/sh -c 'mkdir -p /tmp'
+[docker: exit=0 timeout=False duration_ms=48]
+$ docker cp /Users/karan/karan/projects/assignments/theta/.taskbundle/runs/run_20260827T165607_2ee81604ce/candidate.patch 5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d:/tmp/taskbundle-candidate.patch
+[docker: exit=0 timeout=False duration_ms=20]
+$ docker exec 5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d /bin/sh -c 'cd /workspace && git apply --check /tmp/taskbundle-candidate.patch && git apply /tmp/taskbundle-candidate.patch'
+[docker: exit=0 timeout=False duration_ms=61]
+$ docker exec 5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d /bin/sh -c 'mkdir -p /tmp'
+[docker: exit=0 timeout=False duration_ms=53]
+$ docker cp /Users/karan/karan/projects/assignments/theta/examples/tiny/test.patch 5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d:/tmp/taskbundle-test.patch
+[docker: exit=0 timeout=False duration_ms=18]
+$ docker exec 5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d /bin/sh -c 'cd /workspace && git apply --check /tmp/taskbundle-test.patch && git apply /tmp/taskbundle-test.patch'
+[docker: exit=0 timeout=False duration_ms=55]
+$ docker exec 5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d /bin/sh -c 'cd /workspace && python -m unittest tests.test_existing.DivideTests.test_regular_division'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[docker: exit=0 timeout=False duration_ms=174]
+$ docker exec 5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d /bin/sh -c 'cd /workspace && python -m unittest tests.test_zero.DivideZeroTests.test_zero_raises'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[docker: exit=0 timeout=False duration_ms=84]
+$ docker rm -f 5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d
+5d43049ce5bd39a327965ac74b203aea603ccd62a007a8c11728b94b4222482d
+[docker: exit=0 timeout=False duration_ms=49]

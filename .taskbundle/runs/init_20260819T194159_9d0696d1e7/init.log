@@ -1,0 +1,94 @@
+$ docker info --format '{{.ServerVersion}}'
+29.5.2
+[docker: exit=0 timeout=False duration_ms=964]
+$ docker image inspect sha256:d813644cc51b81a77ba7697351e339754fa01b7306bd19b6b8a9a1aa20624d99 --format '{{.Id}}'
+
+Error response from daemon: No such image: sha256:d813644cc51b81a77ba7697351e339754fa01b7306bd19b6b8a9a1aa20624d99
+[docker: exit=1 timeout=False duration_ms=15]
+$ git init /var/folders/g_/h_17w6p51rl1svb1ps629l5m0000gn/T/taskbundle-init-sykh0cwa/repository
+Initialized empty Git repository in /private/var/folders/g_/h_17w6p51rl1svb1ps629l5m0000gn/T/taskbundle-init-sykh0cwa/repository/.git/
+[exit=0 timeout=False duration_ms=15]
+$ git -C /var/folders/g_/h_17w6p51rl1svb1ps629l5m0000gn/T/taskbundle-init-sykh0cwa/repository fetch --depth=1 /Users/karan/karan/projects/assignments/theta/examples/tiny/repository.bundle 29ed89de01861e34f02afc9b16569c35faebd772
+warning: option "depth" is ignored for /Users/karan/karan/projects/assignments/theta/examples/tiny/repository.bundle
+From /Users/karan/karan/projects/assignments/theta/examples/tiny/repository.bundle
+ * branch            29ed89de01861e34f02afc9b16569c35faebd772 -> FETCH_HEAD
+[exit=0 timeout=False duration_ms=26]
+$ git -C /var/folders/g_/h_17w6p51rl1svb1ps629l5m0000gn/T/taskbundle-init-sykh0cwa/repository checkout --detach FETCH_HEAD
+HEAD is now at 29ed89d Baseline with division bug
+[exit=0 timeout=False duration_ms=15]
+$ docker build --progress plain --pull=false -t taskbundle/tiny-divide-by-zero:f954432d784e /var/folders/g_/h_17w6p51rl1svb1ps629l5m0000gn/T/taskbundle-init-sykh0cwa
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 662B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-alpine
+#2 DONE 0.2s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 31.73kB done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.11-alpine@sha256:6857d2dae63e052057f2db389a7061188ac9a92a3fa8d402bde68f36df6fada1
+#5 resolve docker.io/library/python:3.11-alpine@sha256:6857d2dae63e052057f2db389a7061188ac9a92a3fa8d402bde68f36df6fada1 0.0s done
+#5 CACHED
+
+#6 [2/5] COPY repository /workspace
+#6 DONE 0.0s
+
+#7 [3/5] WORKDIR /workspace
+#7 DONE 0.0s
+
+#8 [4/5] RUN apk add --no-cache git
+#8 1.421 ( 1/12) Installing brotli-libs (1.2.0-r1)
+#8 1.519 ( 2/12) Installing c-ares (1.34.8-r0)
+#8 1.574 ( 3/12) Installing libunistring (1.4.2-r0)
+#8 1.703 ( 4/12) Installing libidn2 (2.3.8-r0)
+#8 1.748 ( 5/12) Installing nghttp2-libs (1.69.0-r0)
+#8 1.788 ( 6/12) Installing libpsl (0.21.5-r3)
+#8 1.833 ( 7/12) Installing zstd-libs (1.5.7-r2)
+#8 1.916 ( 8/12) Installing libcurl (8.21.0-r0)
+#8 2.014 ( 9/12) Installing libexpat (2.8.2-r0)
+#8 2.070 (10/12) Installing pcre2 (10.47-r1)
+#8 2.142 (11/12) Installing git (2.54.0-r0)
+#8 3.376 (12/12) Installing git-init-template (2.54.0-r0)
+#8 3.422 Executing busybox-1.37.0-r31.trigger
+#8 3.435 OK: 27.8 MiB in 50 packages
+#8 DONE 3.5s
+
+#9 [5/5] RUN cd /workspace && git checkout --detach 29ed89de01861e34f02afc9b16569c35faebd772 && git reset --hard 29ed89de01861e34f02afc9b16569c35faebd772 && git clean -fd && for remote in $(git remote); do git remote remove "$remote"; done && git for-each-ref --format='delete %(refname)' | git update-ref --stdin && git reflog expire --expire=now --all && git gc --prune=now && test "$(git rev-parse HEAD)" = 29ed89de01861e34f02afc9b16569c35faebd772 && test -z "$(git status --porcelain --untracked-files=no)"
+#9 0.108 HEAD is now at 29ed89d Baseline with division bug
+#9 0.109 HEAD is now at 29ed89d Baseline with division bug
+#9 DONE 0.1s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 0.3s done
+#10 exporting manifest sha256:95d0374ced17e96ee4a88e67240ddf11b01386175af156cbe63c6593844c0027
+#10 exporting manifest sha256:95d0374ced17e96ee4a88e67240ddf11b01386175af156cbe63c6593844c0027 done
+#10 exporting config sha256:275faf5a7ebfd247939ff48d663e48ccd464f4d46db19619599d9d55aceb7965 done
+#10 exporting attestation manifest sha256:df47bb2b9580feeb5f615184806398df50305a18aeae76bf2583217d5a55e9a1 done
+#10 exporting manifest list sha256:b2a4b035d40ce06d8fab866f0bb9c8af8de8ed958d5a18c9035f5a19fa80f12d done
+#10 naming to docker.io/taskbundle/tiny-divide-by-zero:f954432d784e done
+#10 unpacking to docker.io/taskbundle/tiny-divide-by-zero:f954432d784e 0.1s done
+#10 DONE 0.4s
+[docker: exit=0 timeout=False duration_ms=4469]
+$ docker image inspect taskbundle/tiny-divide-by-zero:f954432d784e --format '{{.Id}}'
+sha256:b2a4b035d40ce06d8fab866f0bb9c8af8de8ed958d5a18c9035f5a19fa80f12d
+[docker: exit=0 timeout=False duration_ms=29]
+$ docker create [redacted]
+025ab68b1357680c42510646914b9c0f568f7b5db67d342588ca8ff4e8b346c9
+[docker: exit=0 timeout=False duration_ms=46]
+$ docker start 025ab68b1357680c42510646914b9c0f568f7b5db67d342588ca8ff4e8b346c9
+025ab68b1357680c42510646914b9c0f568f7b5db67d342588ca8ff4e8b346c9
+[docker: exit=0 timeout=False duration_ms=63]
+$ docker exec 025ab68b1357680c42510646914b9c0f568f7b5db67d342588ca8ff4e8b346c9 /bin/sh -c 'cd /workspace && test -d .git && test "$(git rev-parse HEAD)" = 29ed89de01861e34f02afc9b16569c35faebd772 && test -z "$(git status --porcelain --untracked-files=no)" && test -x /bin/sh'
+[docker: exit=0 timeout=False duration_ms=55]
+$ docker rm -f 025ab68b1357680c42510646914b9c0f568f7b5db67d342588ca8ff4e8b346c9
+025ab68b1357680c42510646914b9c0f568f7b5db67d342588ca8ff4e8b346c9
+[docker: exit=0 timeout=False duration_ms=38]

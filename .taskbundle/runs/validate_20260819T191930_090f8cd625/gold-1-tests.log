@@ -1,0 +1,14 @@
+$ test [pass_to_pass] tests.test_existing.DivideTests.test_regular_division
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[exit=0 timeout=False duration_ms=172]
+$ test [fail_to_pass] tests.test_zero.DivideZeroTests.test_zero_raises
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[exit=0 timeout=False duration_ms=75]

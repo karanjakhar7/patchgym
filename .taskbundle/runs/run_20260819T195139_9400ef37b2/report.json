@@ -1,0 +1,70 @@
+{
+  "bundle_hash": "5ddef537e18a4a776de7be23bbb6ded34c75acb35d85b9760dfd153af65ad254",
+  "candidate_patch": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/run_20260819T195139_9400ef37b2/candidate.patch",
+  "command_id": "run_20260819T195139_9400ef37b2",
+  "error": null,
+  "evaluation_error": false,
+  "groups": {
+    "fail_to_pass": {
+      "error": [],
+      "failed": [],
+      "passed": [
+        "TestLastFM",
+        "TestListenBrainz",
+        "TestSpotify"
+      ],
+      "timeout": []
+    },
+    "pass_to_pass": {
+      "error": [],
+      "failed": [],
+      "passed": [],
+      "timeout": []
+    }
+  },
+  "image_id": "sha256:ca0d10c435c0fca1d98da021b308d9dced36428d7c4b3f2393c3a92a83737935",
+  "patch_applied": true,
+  "resolved": true,
+  "schema_version": 1,
+  "solver": {
+    "duration_ms": 0,
+    "environment_names": [],
+    "exit_code": 0,
+    "kind": "patch",
+    "network_enabled": false,
+    "timed_out": false
+  },
+  "task_id": "instance_navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e",
+  "tests": [
+    {
+      "duration_ms": 53587,
+      "exit_code": 0,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/run_20260819T195139_9400ef37b2/candidate-1-tests.log",
+      "phase": "candidate",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "TestLastFM"
+    },
+    {
+      "duration_ms": 11327,
+      "exit_code": 0,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/run_20260819T195139_9400ef37b2/candidate-1-tests.log",
+      "phase": "candidate",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "TestListenBrainz"
+    },
+    {
+      "duration_ms": 11392,
+      "exit_code": 0,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/run_20260819T195139_9400ef37b2/candidate-1-tests.log",
+      "phase": "candidate",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "TestSpotify"
+    }
+  ]
+}

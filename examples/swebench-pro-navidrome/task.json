@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "task_id": "instance_navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e",
+  "repository": {
+    "url": "https://github.com/navidrome/navidrome.git",
+    "base_commit": "7fc964aec5d432480d76bb90eee14a09aca5125f"
+  },
+  "description": {
+    "problem": "description.md",
+    "requirements": "requirements.md",
+    "interface": "interface.md"
+  },
+  "patches": {
+    "gold": "patch.diff",
+    "tests": "test.patch"
+  },
+  "environment": {
+    "kind": "image",
+    "image": "jefzda/sweap-images:navidrome.navidrome-navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e",
+    "workdir": "/app",
+    "platform": "linux/amd64",
+    "shell": "/bin/bash"
+  },
+  "runner": {
+    "command_template": "go test -tags netgo -run {test_id} ./...",
+    "timeout_seconds": 900
+  },
+  "tests": {
+    "fail_to_pass": [
+      "TestLastFM",
+      "TestListenBrainz",
+      "TestSpotify"
+    ],
+    "pass_to_pass": [],
+    "hidden_paths": [
+      "core/agents/lastfm/agent_test.go",
+      "core/agents/lastfm/client_test.go",
+      "core/agents/listenbrainz/agent_test.go",
+      "core/agents/listenbrainz/auth_router_test.go",
+      "core/agents/listenbrainz/client_test.go",
+      "core/agents/spotify/client_test.go"
+    ]
+  },
+  "resources": {
+    "cpus": 4,
+    "memory_mb": 8192,
+    "pids_limit": 1024
+  }
+}

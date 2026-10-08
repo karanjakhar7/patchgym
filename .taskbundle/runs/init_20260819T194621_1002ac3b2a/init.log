@@ -1,0 +1,6 @@
+$ docker info --format '{{.ServerVersion}}'
+29.5.2
+[docker: exit=0 timeout=False duration_ms=700]
+$ docker image inspect sha256:ca0d10c435c0fca1d98da021b308d9dced36428d7c4b3f2393c3a92a83737935 --format '{{.Id}}'
+sha256:ca0d10c435c0fca1d98da021b308d9dced36428d7c4b3f2393c3a92a83737935
+[docker: exit=0 timeout=False duration_ms=41]

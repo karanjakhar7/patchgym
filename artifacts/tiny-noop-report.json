@@ -1,0 +1,62 @@
+{
+  "bundle_hash": "116b3f1ca76033c837d13a396ec55348c477afbf22640c6ee9be28bcb17e0d67",
+  "candidate_patch": "candidate.patch",
+  "command_id": "run_20260820T201105_b1eada9bdb",
+  "error": null,
+  "evaluation_error": false,
+  "groups": {
+    "fail_to_pass": {
+      "error": [],
+      "failed": [
+        "tests.test_zero.DivideZeroTests.test_zero_raises"
+      ],
+      "passed": [],
+      "timeout": []
+    },
+    "pass_to_pass": {
+      "error": [],
+      "failed": [],
+      "passed": [
+        "tests.test_existing.DivideTests.test_regular_division"
+      ],
+      "timeout": []
+    }
+  },
+  "image_id": "sha256:1a53b1ef12a2ef71fcfae5652b26ef71f7a43bed9f5ca71178081b93008aa62b",
+  "patch_applied": true,
+  "resolved": false,
+  "schema_version": 1,
+  "solver": {
+    "controller_network_required": false,
+    "duration_ms": 0,
+    "environment_names": [],
+    "exit_code": 0,
+    "kind": "noop",
+    "network_enabled": false,
+    "timed_out": false,
+    "workspace_network_enabled": false
+  },
+  "task_id": "tiny-divide-by-zero",
+  "tests": [
+    {
+      "duration_ms": 175,
+      "exit_code": 0,
+      "group": "pass_to_pass",
+      "log_path": "candidate-1-tests.log",
+      "phase": "candidate",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "tests.test_existing.DivideTests.test_regular_division"
+    },
+    {
+      "duration_ms": 72,
+      "exit_code": 1,
+      "group": "fail_to_pass",
+      "log_path": "candidate-1-tests.log",
+      "phase": "candidate",
+      "repetition": 1,
+      "status": "failed",
+      "test_id": "tests.test_zero.DivideZeroTests.test_zero_raises"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "baseline_ok": true,
+  "bundle_hash": "5ddef537e18a4a776de7be23bbb6ded34c75acb35d85b9760dfd153af65ad254",
+  "command_id": "validate_20260819T192543_6a0dd0dcae",
+  "evaluation_error": false,
+  "gold_ok": true,
+  "image_id": "sha256:ca0d10c435c0fca1d98da021b308d9dced36428d7c4b3f2393c3a92a83737935",
+  "repetitions": 1,
+  "schema_version": 1,
+  "task_id": "instance_navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e",
+  "tests": [
+    {
+      "duration_ms": 46367,
+      "exit_code": 1,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T192543_6a0dd0dcae/baseline-1-tests.log",
+      "phase": "baseline",
+      "repetition": 1,
+      "status": "failed",
+      "test_id": "TestLastFM"
+    },
+    {
+      "duration_ms": 9217,
+      "exit_code": 1,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T192543_6a0dd0dcae/baseline-1-tests.log",
+      "phase": "baseline",
+      "repetition": 1,
+      "status": "failed",
+      "test_id": "TestListenBrainz"
+    },
+    {
+      "duration_ms": 8829,
+      "exit_code": 1,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T192543_6a0dd0dcae/baseline-1-tests.log",
+      "phase": "baseline",
+      "repetition": 1,
+      "status": "failed",
+      "test_id": "TestSpotify"
+    },
+    {
+      "duration_ms": 50339,
+      "exit_code": 0,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T192543_6a0dd0dcae/gold-1-tests.log",
+      "phase": "gold",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "TestLastFM"
+    },
+    {
+      "duration_ms": 9780,
+      "exit_code": 0,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T192543_6a0dd0dcae/gold-1-tests.log",
+      "phase": "gold",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "TestListenBrainz"
+    },
+    {
+      "duration_ms": 9823,
+      "exit_code": 0,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T192543_6a0dd0dcae/gold-1-tests.log",
+      "phase": "gold",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "TestSpotify"
+    }
+  ],
+  "valid": true
+}

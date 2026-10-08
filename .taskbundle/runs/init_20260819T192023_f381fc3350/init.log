@@ -1,0 +1,124 @@
+$ docker info --format '{{.ServerVersion}}'
+29.5.2
+[docker: exit=0 timeout=False duration_ms=586]
+$ docker pull --platform linux/amd64 jefzda/sweap-images:navidrome.navidrome-navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e
+navidrome.navidrome-navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e: Pulling from jefzda/sweap-images
+ca513cad200b: Pulling fs layer
+2c02eb48e333: Pulling fs layer
+bb27318808bd: Pulling fs layer
+92b00dc8dfba: Pulling fs layer
+a9984258df29: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+cf05a52c0235: Pulling fs layer
+e7a51c885a61: Pulling fs layer
+79b2e3b21341: Pulling fs layer
+cbf8842459eb: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+853326a25c51: Pulling fs layer
+f0ffe8b56538: Pulling fs layer
+42258d732cd2: Pulling fs layer
+fed2d2f6a8c2: Pulling fs layer
+915751f64772: Pulling fs layer
+73aad7bfcd25: Pulling fs layer
+b599d28005cf: Pulling fs layer
+51e6f3382a99: Pulling fs layer
+63964a8518f5: Pulling fs layer
+4f4fb700ef54: Already exists
+853326a25c51: Download complete
+915751f64772: Download complete
+b599d28005cf: Download complete
+e7a51c885a61: Download complete
+a9984258df29: Download complete
+79b2e3b21341: Download complete
+cbf8842459eb: Download complete
+42258d732cd2: Download complete
+63964a8518f5: Download complete
+fed2d2f6a8c2: Download complete
+cf05a52c0235: Download complete
+cf05a52c0235: Pull complete
+63964a8518f5: Pull complete
+ca513cad200b: Download complete
+ca513cad200b: Pull complete
+51e6f3382a99: Download complete
+73aad7bfcd25: Download complete
+f0ffe8b56538: Download complete
+92b00dc8dfba: Download complete
+bb27318808bd: Download complete
+bb27318808bd: Pull complete
+a9984258df29: Pull complete
+92b00dc8dfba: Pull complete
+4f4fb700ef54: Pull complete
+e7a51c885a61: Pull complete
+f0ffe8b56538: Pull complete
+fed2d2f6a8c2: Pull complete
+73aad7bfcd25: Pull complete
+853326a25c51: Pull complete
+79b2e3b21341: Pull complete
+cbf8842459eb: Pull complete
+51e6f3382a99: Pull complete
+915751f64772: Pull complete
+b599d28005cf: Pull complete
+42258d732cd2: Pull complete
+2c02eb48e333: Download complete
+2c02eb48e333: Pull complete
+Digest: sha256:4fa9d0502beec8ee99068fc223118f17c7637e28c5e7ccda65df73cf50ac37dc
+Status: Downloaded newer image for jefzda/sweap-images:navidrome.navidrome-navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e
+docker.io/jefzda/sweap-images:navidrome.navidrome-navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e
+[docker: exit=0 timeout=False duration_ms=308183]
+$ docker image inspect jefzda/sweap-images:navidrome.navidrome-navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e --format '{{.Id}}'
+sha256:4fa9d0502beec8ee99068fc223118f17c7637e28c5e7ccda65df73cf50ac37dc
+[docker: exit=0 timeout=False duration_ms=47]
+$ docker image inspect jefzda/sweap-images:navidrome.navidrome-navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e --format '{{join .RepoDigests "\n"}}'
+jefzda/sweap-images@sha256:4fa9d0502beec8ee99068fc223118f17c7637e28c5e7ccda65df73cf50ac37dc
+[docker: exit=0 timeout=False duration_ms=27]
+$ docker tag sha256:4fa9d0502beec8ee99068fc223118f17c7637e28c5e7ccda65df73cf50ac37dc taskbundle/source-5ddef537e18a4a77:pinned
+[docker: exit=0 timeout=False duration_ms=17]
+$ docker build --progress plain --pull=false -t taskbundle/instance-navidrome--navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e:5ddef537e18a --platform linux/amd64 /var/folders/g_/h_17w6p51rl1svb1ps629l5m0000gn/T/taskbundle-init-72j4n1al
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 608B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/taskbundle/source-5ddef537e18a4a77:pinned
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM docker.io/taskbundle/source-5ddef537e18a4a77:pinned@sha256:4fa9d0502beec8ee99068fc223118f17c7637e28c5e7ccda65df73cf50ac37dc
+#4 resolve docker.io/taskbundle/source-5ddef537e18a4a77:pinned@sha256:4fa9d0502beec8ee99068fc223118f17c7637e28c5e7ccda65df73cf50ac37dc done
+#4 DONE 0.1s
+
+#5 [2/2] RUN cd /app && git checkout --detach 7fc964aec5d432480d76bb90eee14a09aca5125f && git reset --hard 7fc964aec5d432480d76bb90eee14a09aca5125f && git clean -fd && for remote in $(git remote); do git remote remove "$remote"; done && git for-each-ref --format='delete %(refname)' | git update-ref --stdin && git reflog expire --expire=now --all && git gc --prune=now && test "$(git rev-parse HEAD)" = 7fc964aec5d432480d76bb90eee14a09aca5125f && test -z "$(git status --porcelain --untracked-files=no)"
+#5 0.185 HEAD is now at 7fc964ae Don't wake CacheWarmer every 10 seconds, let it sleep :)
+#5 0.221 HEAD is now at 7fc964ae Don't wake CacheWarmer every 10 seconds, let it sleep :)
+#5 DONE 1.4s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 0.5s done
+#6 exporting manifest sha256:e537c7d063f9bef96d98172b0f7927e3589fcd35ec70eb8623026aec551a8f76
+#6 exporting manifest sha256:e537c7d063f9bef96d98172b0f7927e3589fcd35ec70eb8623026aec551a8f76 done
+#6 exporting config sha256:02f87f24a79bb542fdfd177f8867bafdf77748fc75659b06c04e408b327b31be done
+#6 exporting attestation manifest sha256:295c05262aafb59f51b4818d358fcd6379395a0f88aa97c4ab3ad5223febd198 done
+#6 exporting manifest list sha256:ca0d10c435c0fca1d98da021b308d9dced36428d7c4b3f2393c3a92a83737935 done
+#6 naming to docker.io/taskbundle/instance-navidrome--navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e:5ddef537e18a done
+#6 DONE 0.5s
+[docker: exit=0 timeout=False duration_ms=2730]
+$ docker image inspect taskbundle/instance-navidrome--navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e:5ddef537e18a --format '{{.Id}}'
+sha256:ca0d10c435c0fca1d98da021b308d9dced36428d7c4b3f2393c3a92a83737935
+[docker: exit=0 timeout=False duration_ms=26]
+$ docker create [redacted]
+445070fd517d4cd438661a06881df732e3136c083ce3e9aeb863632d29aac711
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+[docker: exit=0 timeout=False duration_ms=146]
+$ docker start 445070fd517d4cd438661a06881df732e3136c083ce3e9aeb863632d29aac711
+445070fd517d4cd438661a06881df732e3136c083ce3e9aeb863632d29aac711
+[docker: exit=0 timeout=False duration_ms=89]
+$ docker exec 445070fd517d4cd438661a06881df732e3136c083ce3e9aeb863632d29aac711 /bin/bash -c 'cd /app && test -d .git && test "$(git rev-parse HEAD)" = 7fc964aec5d432480d76bb90eee14a09aca5125f && test -z "$(git status --porcelain --untracked-files=no)" && test -x /bin/bash'
+[docker: exit=0 timeout=False duration_ms=140]
+$ docker rm -f 445070fd517d4cd438661a06881df732e3136c083ce3e9aeb863632d29aac711
+445070fd517d4cd438661a06881df732e3136c083ce3e9aeb863632d29aac711
+[docker: exit=0 timeout=False duration_ms=42]

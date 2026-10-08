@@ -1,0 +1,134 @@
+{
+  "baseline_ok": true,
+  "bundle_hash": "f954432d784e819e18b20d64f696274f93f8b8e3ee2d986db82a24f3b02d96e6",
+  "command_id": "validate_20260819T191930_090f8cd625",
+  "evaluation_error": false,
+  "gold_ok": true,
+  "image_id": "sha256:d813644cc51b81a77ba7697351e339754fa01b7306bd19b6b8a9a1aa20624d99",
+  "repetitions": 3,
+  "schema_version": 1,
+  "task_id": "tiny-divide-by-zero",
+  "tests": [
+    {
+      "duration_ms": 175,
+      "exit_code": 0,
+      "group": "pass_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T191930_090f8cd625/baseline-1-tests.log",
+      "phase": "baseline",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "tests.test_existing.DivideTests.test_regular_division"
+    },
+    {
+      "duration_ms": 81,
+      "exit_code": 1,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T191930_090f8cd625/baseline-1-tests.log",
+      "phase": "baseline",
+      "repetition": 1,
+      "status": "failed",
+      "test_id": "tests.test_zero.DivideZeroTests.test_zero_raises"
+    },
+    {
+      "duration_ms": 172,
+      "exit_code": 0,
+      "group": "pass_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T191930_090f8cd625/gold-1-tests.log",
+      "phase": "gold",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "tests.test_existing.DivideTests.test_regular_division"
+    },
+    {
+      "duration_ms": 75,
+      "exit_code": 0,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T191930_090f8cd625/gold-1-tests.log",
+      "phase": "gold",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "tests.test_zero.DivideZeroTests.test_zero_raises"
+    },
+    {
+      "duration_ms": 178,
+      "exit_code": 0,
+      "group": "pass_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T191930_090f8cd625/baseline-2-tests.log",
+      "phase": "baseline",
+      "repetition": 2,
+      "status": "passed",
+      "test_id": "tests.test_existing.DivideTests.test_regular_division"
+    },
+    {
+      "duration_ms": 75,
+      "exit_code": 1,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T191930_090f8cd625/baseline-2-tests.log",
+      "phase": "baseline",
+      "repetition": 2,
+      "status": "failed",
+      "test_id": "tests.test_zero.DivideZeroTests.test_zero_raises"
+    },
+    {
+      "duration_ms": 179,
+      "exit_code": 0,
+      "group": "pass_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T191930_090f8cd625/gold-2-tests.log",
+      "phase": "gold",
+      "repetition": 2,
+      "status": "passed",
+      "test_id": "tests.test_existing.DivideTests.test_regular_division"
+    },
+    {
+      "duration_ms": 77,
+      "exit_code": 0,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T191930_090f8cd625/gold-2-tests.log",
+      "phase": "gold",
+      "repetition": 2,
+      "status": "passed",
+      "test_id": "tests.test_zero.DivideZeroTests.test_zero_raises"
+    },
+    {
+      "duration_ms": 181,
+      "exit_code": 0,
+      "group": "pass_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T191930_090f8cd625/baseline-3-tests.log",
+      "phase": "baseline",
+      "repetition": 3,
+      "status": "passed",
+      "test_id": "tests.test_existing.DivideTests.test_regular_division"
+    },
+    {
+      "duration_ms": 78,
+      "exit_code": 1,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T191930_090f8cd625/baseline-3-tests.log",
+      "phase": "baseline",
+      "repetition": 3,
+      "status": "failed",
+      "test_id": "tests.test_zero.DivideZeroTests.test_zero_raises"
+    },
+    {
+      "duration_ms": 177,
+      "exit_code": 0,
+      "group": "pass_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T191930_090f8cd625/gold-3-tests.log",
+      "phase": "gold",
+      "repetition": 3,
+      "status": "passed",
+      "test_id": "tests.test_existing.DivideTests.test_regular_division"
+    },
+    {
+      "duration_ms": 77,
+      "exit_code": 0,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T191930_090f8cd625/gold-3-tests.log",
+      "phase": "gold",
+      "repetition": 3,
+      "status": "passed",
+      "test_id": "tests.test_zero.DivideZeroTests.test_zero_raises"
+    }
+  ],
+  "valid": true
+}

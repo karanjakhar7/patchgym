@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "patchgym"
+version = "0.1.0"
+description = "Build, validate, and evaluate SWE-bench-style coding tasks and RL environments for coding agents in Docker"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+  "litellm>=1.83.3,<2",
+  "pydantic>=2.8,<3",
+  "rich>=13.7,<15",
+  "typer>=0.12,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2,<9",
+  "pytest-cov>=5,<7",
+  "ruff>=0.6,<1",
+]
+
+[project.scripts]
+task = "patchgym.cli:run"
+patchgym = "patchgym.cli:run"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/patchgym"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+markers = [
+  "docker: requires a running Docker daemon",
+  "live: requires explicit credentials and may call a paid external service",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

@@ -1,0 +1,13 @@
+{
+  "base_commit": "7fc964aec5d432480d76bb90eee14a09aca5125f",
+  "bundle_hash": "5ddef537e18a4a776de7be23bbb6ded34c75acb35d85b9760dfd153af65ad254",
+  "cached": true,
+  "image_id": "sha256:ca0d10c435c0fca1d98da021b308d9dced36428d7c4b3f2393c3a92a83737935",
+  "image_ref": "taskbundle/instance-navidrome--navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e:5ddef537e18a",
+  "initialized_at": "2026-08-19T19:25:35.164Z",
+  "platform": "linux/amd64",
+  "schema_version": 1,
+  "source_digest": "jefzda/sweap-images@sha256:4fa9d0502beec8ee99068fc223118f17c7637e28c5e7ccda65df73cf50ac37dc",
+  "source_image": "jefzda/sweap-images:navidrome.navidrome-navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e",
+  "task_id": "instance_navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e"
+}

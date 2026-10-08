@@ -1,0 +1,237 @@
+$ test [fail_to_pass] TestLastFM
+?   	github.com/navidrome/navidrome	[no test files]
+?   	github.com/navidrome/navidrome/cmd	[no test files]
+?   	github.com/navidrome/navidrome/conf	[no test files]
+?   	github.com/navidrome/navidrome/conf/configtest	[no test files]
+?   	github.com/navidrome/navidrome/consts	[no test files]
+ok  	github.com/navidrome/navidrome/core	0.080s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/agents	0.069s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/agents/lastfm	0.098s
+ok  	github.com/navidrome/navidrome/core/agents/listenbrainz	0.076s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/agents/spotify	0.062s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/artwork	0.074s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/auth	0.071s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/ffmpeg	0.060s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/scrobbler	0.068s [no tests to run]
+ok  	github.com/navidrome/navidrome/db	0.065s [no tests to run]
+?   	github.com/navidrome/navidrome/db/migration	[no test files]
+ok  	github.com/navidrome/navidrome/log	0.044s [no tests to run]
+ok  	github.com/navidrome/navidrome/model	0.074s [no tests to run]
+ok  	github.com/navidrome/navidrome/model/criteria	0.052s [no tests to run]
+?   	github.com/navidrome/navidrome/model/request	[no test files]
+ok  	github.com/navidrome/navidrome/persistence	0.094s [no tests to run]
+?   	github.com/navidrome/navidrome/resources	[no test files]
+ok  	github.com/navidrome/navidrome/scanner	0.086s [no tests to run]
+ok  	github.com/navidrome/navidrome/scanner/metadata	0.100s [no tests to run]
+ok  	github.com/navidrome/navidrome/scanner/metadata/ffmpeg	0.092s [no tests to run]
+ok  	github.com/navidrome/navidrome/scanner/metadata/taglib	0.103s [no tests to run]
+?   	github.com/navidrome/navidrome/scheduler	[no test files]
+ok  	github.com/navidrome/navidrome/server	0.103s [no tests to run]
+?   	github.com/navidrome/navidrome/server/backgrounds	[no test files]
+ok  	github.com/navidrome/navidrome/server/events	0.099s [no tests to run]
+ok  	github.com/navidrome/navidrome/server/nativeapi	0.165s [no tests to run]
+ok  	github.com/navidrome/navidrome/server/public	0.096s [no tests to run]
+ok  	github.com/navidrome/navidrome/server/subsonic	0.149s [no tests to run]
+?   	github.com/navidrome/navidrome/server/subsonic/filter	[no test files]
+ok  	github.com/navidrome/navidrome/server/subsonic/responses	0.058s [no tests to run]
+?   	github.com/navidrome/navidrome/tests	[no test files]
+?   	github.com/navidrome/navidrome/ui	[no test files]
+ok  	github.com/navidrome/navidrome/utils	0.077s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/cache	0.065s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/gravatar	0.067s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/number	0.069s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/pl	0.038s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/singleton	0.039s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/slice	0.040s [no tests to run]
+# github.com/navidrome/navidrome/scanner/metadata/taglib
+taglib_wrapper.cpp: In function 'int taglib_read(const char*, long unsigned int)':
+taglib_wrapper.cpp:33:55: warning: 'virtual int TagLib::AudioProperties::length() const' is deprecated [-Wdeprecated-declarations]
+   33 |   go_map_put_int(id, (char *)"duration", props->length());
+      |                                          ~~~~~~~~~~~~~^~
+In file included from /usr/local/include/taglib/asfproperties.h:31,
+                 from /usr/local/include/taglib/asffile.h:32,
+                 from taglib_wrapper.cpp:6:
+/usr/local/include/taglib/audioproperties.h:82:17: note: declared here
+   82 |     virtual int length() const;
+      |                 ^~~~~~
+# github.com/navidrome/navidrome/scanner/metadata/taglib [github.com/navidrome/navidrome/scanner/metadata/taglib.test]
+taglib_wrapper.cpp: In function 'int taglib_read(const char*, long unsigned int)':
+taglib_wrapper.cpp:33:55: warning: 'virtual int TagLib::AudioProperties::length() const' is deprecated [-Wdeprecated-declarations]
+   33 |   go_map_put_int(id, (char *)"duration", props->length());
+      |                                          ~~~~~~~~~~~~~^~
+In file included from /usr/local/include/taglib/asfproperties.h:31,
+                 from /usr/local/include/taglib/asffile.h:32,
+                 from taglib_wrapper.cpp:6:
+/usr/local/include/taglib/audioproperties.h:82:17: note: declared here
+   82 |     virtual int length() const;
+      |                 ^~~~~~
+# github.com/navidrome/navidrome/scanner/metadata/taglib [github.com/navidrome/navidrome/scanner/metadata.test]
+taglib_wrapper.cpp: In function 'int taglib_read(const char*, long unsigned int)':
+taglib_wrapper.cpp:33:55: warning: 'virtual int TagLib::AudioProperties::length() const' is deprecated [-Wdeprecated-declarations]
+   33 |   go_map_put_int(id, (char *)"duration", props->length());
+      |                                          ~~~~~~~~~~~~~^~
+In file included from /usr/local/include/taglib/asfproperties.h:31,
+                 from /usr/local/include/taglib/asffile.h:32,
+                 from taglib_wrapper.cpp:6:
+/usr/local/include/taglib/audioproperties.h:82:17: note: declared here
+   82 |     virtual int length() const;
+      |                 ^~~~~~
+[exit=0 timeout=False duration_ms=49980]
+$ test [fail_to_pass] TestListenBrainz
+?   	github.com/navidrome/navidrome	[no test files]
+?   	github.com/navidrome/navidrome/cmd	[no test files]
+?   	github.com/navidrome/navidrome/conf	[no test files]
+?   	github.com/navidrome/navidrome/conf/configtest	[no test files]
+?   	github.com/navidrome/navidrome/consts	[no test files]
+ok  	github.com/navidrome/navidrome/core	0.199s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/agents	0.134s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/agents/lastfm	0.181s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/agents/listenbrainz	0.263s
+ok  	github.com/navidrome/navidrome/core/agents/spotify	0.165s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/artwork	0.120s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/auth	0.210s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/ffmpeg	0.179s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/scrobbler	0.122s [no tests to run]
+ok  	github.com/navidrome/navidrome/db	0.146s [no tests to run]
+?   	github.com/navidrome/navidrome/db/migration	[no test files]
+ok  	github.com/navidrome/navidrome/log	0.097s [no tests to run]
+ok  	github.com/navidrome/navidrome/model	0.167s [no tests to run]
+ok  	github.com/navidrome/navidrome/model/criteria	0.098s [no tests to run]
+?   	github.com/navidrome/navidrome/model/request	[no test files]
+ok  	github.com/navidrome/navidrome/persistence	0.204s [no tests to run]
+?   	github.com/navidrome/navidrome/resources	[no test files]
+ok  	github.com/navidrome/navidrome/scanner	0.125s [no tests to run]
+ok  	github.com/navidrome/navidrome/scanner/metadata	0.119s [no tests to run]
+ok  	github.com/navidrome/navidrome/scanner/metadata/ffmpeg	0.109s [no tests to run]
+ok  	github.com/navidrome/navidrome/scanner/metadata/taglib	0.124s [no tests to run]
+?   	github.com/navidrome/navidrome/scheduler	[no test files]
+ok  	github.com/navidrome/navidrome/server	0.118s [no tests to run]
+?   	github.com/navidrome/navidrome/server/backgrounds	[no test files]
+ok  	github.com/navidrome/navidrome/server/events	0.112s [no tests to run]
+ok  	github.com/navidrome/navidrome/server/nativeapi	0.128s [no tests to run]
+ok  	github.com/navidrome/navidrome/server/public	0.108s [no tests to run]
+ok  	github.com/navidrome/navidrome/server/subsonic	0.190s [no tests to run]
+?   	github.com/navidrome/navidrome/server/subsonic/filter	[no test files]
+ok  	github.com/navidrome/navidrome/server/subsonic/responses	0.082s [no tests to run]
+?   	github.com/navidrome/navidrome/tests	[no test files]
+?   	github.com/navidrome/navidrome/ui	[no test files]
+ok  	github.com/navidrome/navidrome/utils	0.099s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/cache	0.105s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/gravatar	0.173s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/number	0.106s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/pl	0.098s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/singleton	0.038s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/slice	0.040s [no tests to run]
+# github.com/navidrome/navidrome/scanner/metadata/taglib
+taglib_wrapper.cpp: In function 'int taglib_read(const char*, long unsigned int)':
+taglib_wrapper.cpp:33:55: warning: 'virtual int TagLib::AudioProperties::length() const' is deprecated [-Wdeprecated-declarations]
+   33 |   go_map_put_int(id, (char *)"duration", props->length());
+      |                                          ~~~~~~~~~~~~~^~
+In file included from /usr/local/include/taglib/asfproperties.h:31,
+                 from /usr/local/include/taglib/asffile.h:32,
+                 from taglib_wrapper.cpp:6:
+/usr/local/include/taglib/audioproperties.h:82:17: note: declared here
+   82 |     virtual int length() const;
+      |                 ^~~~~~
+# github.com/navidrome/navidrome/scanner/metadata/taglib [github.com/navidrome/navidrome/scanner/metadata.test]
+taglib_wrapper.cpp: In function 'int taglib_read(const char*, long unsigned int)':
+taglib_wrapper.cpp:33:55: warning: 'virtual int TagLib::AudioProperties::length() const' is deprecated [-Wdeprecated-declarations]
+   33 |   go_map_put_int(id, (char *)"duration", props->length());
+      |                                          ~~~~~~~~~~~~~^~
+In file included from /usr/local/include/taglib/asfproperties.h:31,
+                 from /usr/local/include/taglib/asffile.h:32,
+                 from taglib_wrapper.cpp:6:
+/usr/local/include/taglib/audioproperties.h:82:17: note: declared here
+   82 |     virtual int length() const;
+      |                 ^~~~~~
+# github.com/navidrome/navidrome/scanner/metadata/taglib [github.com/navidrome/navidrome/scanner/metadata/taglib.test]
+taglib_wrapper.cpp: In function 'int taglib_read(const char*, long unsigned int)':
+taglib_wrapper.cpp:33:55: warning: 'virtual int TagLib::AudioProperties::length() const' is deprecated [-Wdeprecated-declarations]
+   33 |   go_map_put_int(id, (char *)"duration", props->length());
+      |                                          ~~~~~~~~~~~~~^~
+In file included from /usr/local/include/taglib/asfproperties.h:31,
+                 from /usr/local/include/taglib/asffile.h:32,
+                 from taglib_wrapper.cpp:6:
+/usr/local/include/taglib/audioproperties.h:82:17: note: declared here
+   82 |     virtual int length() const;
+      |                 ^~~~~~
+[exit=0 timeout=False duration_ms=9905]
+$ test [fail_to_pass] TestSpotify
+?   	github.com/navidrome/navidrome	[no test files]
+?   	github.com/navidrome/navidrome/cmd	[no test files]
+?   	github.com/navidrome/navidrome/conf	[no test files]
+?   	github.com/navidrome/navidrome/conf/configtest	[no test files]
+?   	github.com/navidrome/navidrome/consts	[no test files]
+ok  	github.com/navidrome/navidrome/core	0.189s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/agents	0.167s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/agents/lastfm	0.124s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/agents/listenbrainz	0.126s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/agents/spotify	0.184s
+ok  	github.com/navidrome/navidrome/core/artwork	0.205s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/auth	0.168s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/ffmpeg	0.186s [no tests to run]
+ok  	github.com/navidrome/navidrome/core/scrobbler	0.194s [no tests to run]
+ok  	github.com/navidrome/navidrome/db	0.137s [no tests to run]
+?   	github.com/navidrome/navidrome/db/migration	[no test files]
+ok  	github.com/navidrome/navidrome/log	0.092s [no tests to run]
+ok  	github.com/navidrome/navidrome/model	0.163s [no tests to run]
+ok  	github.com/navidrome/navidrome/model/criteria	0.094s [no tests to run]
+?   	github.com/navidrome/navidrome/model/request	[no test files]
+ok  	github.com/navidrome/navidrome/persistence	0.203s [no tests to run]
+?   	github.com/navidrome/navidrome/resources	[no test files]
+ok  	github.com/navidrome/navidrome/scanner	0.162s [no tests to run]
+ok  	github.com/navidrome/navidrome/scanner/metadata	0.099s [no tests to run]
+ok  	github.com/navidrome/navidrome/scanner/metadata/ffmpeg	0.095s [no tests to run]
+ok  	github.com/navidrome/navidrome/scanner/metadata/taglib	0.098s [no tests to run]
+?   	github.com/navidrome/navidrome/scheduler	[no test files]
+ok  	github.com/navidrome/navidrome/server	0.103s [no tests to run]
+?   	github.com/navidrome/navidrome/server/backgrounds	[no test files]
+ok  	github.com/navidrome/navidrome/server/events	0.103s [no tests to run]
+ok  	github.com/navidrome/navidrome/server/nativeapi	0.094s [no tests to run]
+ok  	github.com/navidrome/navidrome/server/public	0.145s [no tests to run]
+ok  	github.com/navidrome/navidrome/server/subsonic	0.169s [no tests to run]
+?   	github.com/navidrome/navidrome/server/subsonic/filter	[no test files]
+ok  	github.com/navidrome/navidrome/server/subsonic/responses	0.072s [no tests to run]
+?   	github.com/navidrome/navidrome/tests	[no test files]
+?   	github.com/navidrome/navidrome/ui	[no test files]
+ok  	github.com/navidrome/navidrome/utils	0.090s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/cache	0.166s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/gravatar	0.103s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/number	0.100s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/pl	0.107s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/singleton	0.041s [no tests to run]
+ok  	github.com/navidrome/navidrome/utils/slice	0.042s [no tests to run]
+# github.com/navidrome/navidrome/scanner/metadata/taglib
+taglib_wrapper.cpp: In function 'int taglib_read(const char*, long unsigned int)':
+taglib_wrapper.cpp:33:55: warning: 'virtual int TagLib::AudioProperties::length() const' is deprecated [-Wdeprecated-declarations]
+   33 |   go_map_put_int(id, (char *)"duration", props->length());
+      |                                          ~~~~~~~~~~~~~^~
+In file included from /usr/local/include/taglib/asfproperties.h:31,
+                 from /usr/local/include/taglib/asffile.h:32,
+                 from taglib_wrapper.cpp:6:
+/usr/local/include/taglib/audioproperties.h:82:17: note: declared here
+   82 |     virtual int length() const;
+      |                 ^~~~~~
+# github.com/navidrome/navidrome/scanner/metadata/taglib [github.com/navidrome/navidrome/scanner/metadata.test]
+taglib_wrapper.cpp: In function 'int taglib_read(const char*, long unsigned int)':
+taglib_wrapper.cpp:33:55: warning: 'virtual int TagLib::AudioProperties::length() const' is deprecated [-Wdeprecated-declarations]
+   33 |   go_map_put_int(id, (char *)"duration", props->length());
+      |                                          ~~~~~~~~~~~~~^~
+In file included from /usr/local/include/taglib/asfproperties.h:31,
+                 from /usr/local/include/taglib/asffile.h:32,
+                 from taglib_wrapper.cpp:6:
+/usr/local/include/taglib/audioproperties.h:82:17: note: declared here
+   82 |     virtual int length() const;
+      |                 ^~~~~~
+# github.com/navidrome/navidrome/scanner/metadata/taglib [github.com/navidrome/navidrome/scanner/metadata/taglib.test]
+taglib_wrapper.cpp: In function 'int taglib_read(const char*, long unsigned int)':
+taglib_wrapper.cpp:33:55: warning: 'virtual int TagLib::AudioProperties::length() const' is deprecated [-Wdeprecated-declarations]
+   33 |   go_map_put_int(id, (char *)"duration", props->length());
+      |                                          ~~~~~~~~~~~~~^~
+In file included from /usr/local/include/taglib/asfproperties.h:31,
+                 from /usr/local/include/taglib/asffile.h:32,
+                 from taglib_wrapper.cpp:6:
+/usr/local/include/taglib/audioproperties.h:82:17: note: declared here
+   82 |     virtual int length() const;
+      |                 ^~~~~~
+[exit=0 timeout=False duration_ms=9577]

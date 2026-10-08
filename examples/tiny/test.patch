@@ -1,0 +1,19 @@
+diff --git a/tests/test_zero.py b/tests/test_zero.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_zero.py
+@@ -0,0 +1,13 @@
++import unittest
++
++from tinycalc import divide
++
++
++class DivideZeroTests(unittest.TestCase):
++    def test_zero_raises(self) -> None:
++        with self.assertRaisesRegex(ValueError, "divisor must not be zero"):
++            divide(10, 0)
++
++
++if __name__ == "__main__":
++    unittest.main()
+

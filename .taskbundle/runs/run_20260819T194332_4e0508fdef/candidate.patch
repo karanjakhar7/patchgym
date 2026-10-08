@@ -1,0 +1,11 @@
+diff --git a/tinycalc.py b/tinycalc.py
+--- a/tinycalc.py
++++ b/tinycalc.py
+@@ -1,6 +1,6 @@
+ def divide(dividend: float, divisor: float) -> float:
+     """Return dividend divided by divisor."""
+     if divisor == 0:
+-        return 0
++        raise ValueError("divisor must not be zero")
+     return dividend / divisor
+

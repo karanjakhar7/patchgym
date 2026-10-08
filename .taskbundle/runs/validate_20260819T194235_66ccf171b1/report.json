@@ -1,0 +1,54 @@
+{
+  "baseline_ok": true,
+  "bundle_hash": "f954432d784e819e18b20d64f696274f93f8b8e3ee2d986db82a24f3b02d96e6",
+  "command_id": "validate_20260819T194235_66ccf171b1",
+  "evaluation_error": false,
+  "gold_ok": true,
+  "image_id": "sha256:b2a4b035d40ce06d8fab866f0bb9c8af8de8ed958d5a18c9035f5a19fa80f12d",
+  "repetitions": 1,
+  "schema_version": 1,
+  "task_id": "tiny-divide-by-zero",
+  "tests": [
+    {
+      "duration_ms": 180,
+      "exit_code": 0,
+      "group": "pass_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T194235_66ccf171b1/baseline-1-tests.log",
+      "phase": "baseline",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "tests.test_existing.DivideTests.test_regular_division"
+    },
+    {
+      "duration_ms": 94,
+      "exit_code": 1,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T194235_66ccf171b1/baseline-1-tests.log",
+      "phase": "baseline",
+      "repetition": 1,
+      "status": "failed",
+      "test_id": "tests.test_zero.DivideZeroTests.test_zero_raises"
+    },
+    {
+      "duration_ms": 177,
+      "exit_code": 0,
+      "group": "pass_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T194235_66ccf171b1/gold-1-tests.log",
+      "phase": "gold",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "tests.test_existing.DivideTests.test_regular_division"
+    },
+    {
+      "duration_ms": 75,
+      "exit_code": 0,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/validate_20260819T194235_66ccf171b1/gold-1-tests.log",
+      "phase": "gold",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "tests.test_zero.DivideZeroTests.test_zero_raises"
+    }
+  ],
+  "valid": true
+}

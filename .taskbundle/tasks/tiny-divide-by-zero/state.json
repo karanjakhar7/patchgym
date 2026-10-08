@@ -1,0 +1,12 @@
+{
+  "base_commit": "6ac88b22af855a029f844695229b3d60c17d2755",
+  "bundle_hash": "116b3f1ca76033c837d13a396ec55348c477afbf22640c6ee9be28bcb17e0d67",
+  "image_id": "sha256:b1a8b966b8ffacf5237b6544d4da7b6531200f0abd20abe838aa34383dc8c4c4",
+  "image_ref": "taskbundle/tiny-divide-by-zero:116b3f1ca760",
+  "initialized_at": "2026-08-27T16:55:25.519Z",
+  "platform": null,
+  "schema_version": 1,
+  "source_digest": null,
+  "source_image": "python:3.11-alpine",
+  "task_id": "tiny-divide-by-zero"
+}

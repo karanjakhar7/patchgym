@@ -1,0 +1,89 @@
+$ docker info --format '{{.ServerVersion}}'
+29.5.2
+[docker: exit=0 timeout=False duration_ms=752]
+$ git init /var/folders/g_/h_17w6p51rl1svb1ps629l5m0000gn/T/taskbundle-init-snquiig_/repository
+Initialized empty Git repository in /private/var/folders/g_/h_17w6p51rl1svb1ps629l5m0000gn/T/taskbundle-init-snquiig_/repository/.git/
+[exit=0 timeout=False duration_ms=51]
+$ git -C /var/folders/g_/h_17w6p51rl1svb1ps629l5m0000gn/T/taskbundle-init-snquiig_/repository fetch --depth=1 /Users/karan/karan/projects/assignments/theta/examples/tiny/repository.bundle 6ac88b22af855a029f844695229b3d60c17d2755
+warning: option "depth" is ignored for /Users/karan/karan/projects/assignments/theta/examples/tiny/repository.bundle
+From /Users/karan/karan/projects/assignments/theta/examples/tiny/repository.bundle
+ * branch            6ac88b22af855a029f844695229b3d60c17d2755 -> FETCH_HEAD
+[exit=0 timeout=False duration_ms=28]
+$ git -C /var/folders/g_/h_17w6p51rl1svb1ps629l5m0000gn/T/taskbundle-init-snquiig_/repository checkout --detach FETCH_HEAD
+HEAD is now at 6ac88b2 Add ordinary visible regression test
+[exit=0 timeout=False duration_ms=12]
+$ docker build --progress plain --pull=false -t taskbundle/tiny-divide-by-zero:116b3f1ca760 /var/folders/g_/h_17w6p51rl1svb1ps629l5m0000gn/T/taskbundle-init-snquiig_
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 662B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-alpine
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 32.61kB done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.11-alpine@sha256:6857d2dae63e052057f2db389a7061188ac9a92a3fa8d402bde68f36df6fada1
+#5 resolve docker.io/library/python:3.11-alpine@sha256:6857d2dae63e052057f2db389a7061188ac9a92a3fa8d402bde68f36df6fada1 done
+#5 CACHED
+
+#6 [2/5] COPY repository /workspace
+#6 DONE 0.0s
+
+#7 [3/5] WORKDIR /workspace
+#7 DONE 0.0s
+
+#8 [4/5] RUN apk add --no-cache git
+#8 18.86 ( 1/12) Installing brotli-libs (1.2.0-r1)
+#8 28.31 ( 2/12) Installing c-ares (1.34.8-r0)
+#8 29.00 ( 3/12) Installing libunistring (1.4.2-r0)
+#8 30.10 ( 4/12) Installing libidn2 (2.3.8-r0)
+#8 30.22 ( 5/12) Installing nghttp2-libs (1.69.0-r0)
+#8 30.31 ( 6/12) Installing libpsl (0.21.5-r3)
+#8 31.18 ( 7/12) Installing zstd-libs (1.5.7-r2)
+#8 31.55 ( 8/12) Installing libcurl (8.21.0-r0)
+#8 31.92 ( 9/12) Installing libexpat (2.8.3-r0)
+#8 32.02 (10/12) Installing pcre2 (10.47-r1)
+#8 32.43 (11/12) Installing git (2.54.0-r0)
+#8 46.26 (12/12) Installing git-init-template (2.54.0-r0)
+#8 46.53 Executing busybox-1.37.0-r31.trigger
+#8 46.55 OK: 27.8 MiB in 50 packages
+#8 DONE 46.6s
+
+#9 [5/5] RUN cd /workspace && git checkout --detach 6ac88b22af855a029f844695229b3d60c17d2755 && git reset --hard 6ac88b22af855a029f844695229b3d60c17d2755 && git clean -fd && for remote in $(git remote); do git remote remove "$remote"; done && git for-each-ref --format='delete %(refname)' | git update-ref --stdin && git reflog expire --expire=now --all && git gc --prune=now && test "$(git rev-parse HEAD)" = 6ac88b22af855a029f844695229b3d60c17d2755 && test -z "$(git status --porcelain --untracked-files=no)"
+#9 0.166 HEAD is now at 6ac88b2 Add ordinary visible regression test
+#9 0.167 HEAD is now at 6ac88b2 Add ordinary visible regression test
+#9 DONE 0.2s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 0.3s done
+#10 exporting manifest sha256:6fce36bb18e1b0e03b9a4c5c9f52ad9077561921824338506e8b5f5a1a916f69 done
+#10 exporting config sha256:6fb064a196320f4f95754e300d9e5719d47ba0e29a581988542da8c99ba4f315 done
+#10 exporting attestation manifest sha256:b985eca1d360266788c01c0b611a91350f2a04f34cb79311b60f900637285a98 done
+#10 exporting manifest list sha256:b1a8b966b8ffacf5237b6544d4da7b6531200f0abd20abe838aa34383dc8c4c4 done
+#10 naming to docker.io/taskbundle/tiny-divide-by-zero:116b3f1ca760 done
+#10 unpacking to docker.io/taskbundle/tiny-divide-by-zero:116b3f1ca760 0.1s done
+#10 DONE 0.4s
+[docker: exit=0 timeout=False duration_ms=47522]
+$ docker image inspect taskbundle/tiny-divide-by-zero:116b3f1ca760 --format '{{.Id}}'
+sha256:b1a8b966b8ffacf5237b6544d4da7b6531200f0abd20abe838aa34383dc8c4c4
+[docker: exit=0 timeout=False duration_ms=28]
+$ docker create [redacted]
+b3ac60c577b0c2ec4bf599ab6258080ca0ba283eada88abdfec8fef30ec574ad
+[docker: exit=0 timeout=False duration_ms=48]
+$ docker start b3ac60c577b0c2ec4bf599ab6258080ca0ba283eada88abdfec8fef30ec574ad
+b3ac60c577b0c2ec4bf599ab6258080ca0ba283eada88abdfec8fef30ec574ad
+[docker: exit=0 timeout=False duration_ms=113]
+$ docker exec b3ac60c577b0c2ec4bf599ab6258080ca0ba283eada88abdfec8fef30ec574ad /bin/sh -c 'cd /workspace && test -d .git && test "$(git rev-parse HEAD)" = 6ac88b22af855a029f844695229b3d60c17d2755 && test -z "$(git status --porcelain --untracked-files=no)" && test -x /bin/sh'
+[docker: exit=0 timeout=False duration_ms=57]
+$ docker rm -f b3ac60c577b0c2ec4bf599ab6258080ca0ba283eada88abdfec8fef30ec574ad
+b3ac60c577b0c2ec4bf599ab6258080ca0ba283eada88abdfec8fef30ec574ad
+[docker: exit=0 timeout=False duration_ms=48]

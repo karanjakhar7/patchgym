@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "task_id": "tiny-divide-by-zero",
+  "repository": {
+    "url": "repository.bundle",
+    "base_commit": "6ac88b22af855a029f844695229b3d60c17d2755"
+  },
+  "description": {
+    "problem": "description.md",
+    "requirements": "requirements.md"
+  },
+  "patches": {
+    "gold": "patch.diff",
+    "tests": "test.patch"
+  },
+  "environment": {
+    "kind": "build",
+    "base_image": "python:3.11-alpine",
+    "setup_commands": [
+      "apk add --no-cache git"
+    ],
+    "workdir": "/workspace",
+    "shell": "/bin/sh"
+  },
+  "runner": {
+    "command_template": "python -m unittest {test_id}",
+    "timeout_seconds": 30
+  },
+  "tests": {
+    "fail_to_pass": [
+      "tests.test_zero.DivideZeroTests.test_zero_raises"
+    ],
+    "pass_to_pass": [
+      "tests.test_existing.DivideTests.test_regular_division"
+    ],
+    "hidden_paths": [
+      "tests/test_existing.py",
+      "tests/test_zero.py"
+    ]
+  },
+  "resources": {
+    "cpus": 1,
+    "memory_mb": 256,
+    "pids_limit": 64
+  }
+}

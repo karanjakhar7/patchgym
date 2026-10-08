@@ -1,0 +1,14 @@
+{
+  "base_commit": "29ed89de01861e34f02afc9b16569c35faebd772",
+  "bundle_hash": "f954432d784e819e18b20d64f696274f93f8b8e3ee2d986db82a24f3b02d96e6",
+  "cached": false,
+  "image_id": "sha256:d813644cc51b81a77ba7697351e339754fa01b7306bd19b6b8a9a1aa20624d99",
+  "image_ref": "taskbundle/tiny-divide-by-zero:f954432d784e",
+  "initialized_at": "2026-08-19T19:19:22.097Z",
+  "platform": null,
+  "schema_version": 1,
+  "source_digest": null,
+  "source_image": "python:3.11-alpine",
+  "state_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/tasks/tiny-divide-by-zero/state.json",
+  "task_id": "tiny-divide-by-zero"
+}

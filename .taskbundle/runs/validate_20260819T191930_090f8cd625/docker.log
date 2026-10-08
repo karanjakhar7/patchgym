@@ -1,0 +1,237 @@
+$ docker info --format '{{.ServerVersion}}'
+29.5.2
+[docker: exit=0 timeout=False duration_ms=114]
+$ docker create [redacted]
+4384d1aaf1713465c1524297e1f7f05828e7d0044d398c82f31fcdd52546512c
+[docker: exit=0 timeout=False duration_ms=39]
+$ docker start 4384d1aaf1713465c1524297e1f7f05828e7d0044d398c82f31fcdd52546512c
+4384d1aaf1713465c1524297e1f7f05828e7d0044d398c82f31fcdd52546512c
+[docker: exit=0 timeout=False duration_ms=69]
+$ docker exec 4384d1aaf1713465c1524297e1f7f05828e7d0044d398c82f31fcdd52546512c /bin/sh -c 'cd /workspace && git reset --hard HEAD && git clean -fd'
+HEAD is now at 29ed89d Baseline with division bug
+[docker: exit=0 timeout=False duration_ms=45]
+$ docker exec 4384d1aaf1713465c1524297e1f7f05828e7d0044d398c82f31fcdd52546512c /bin/sh -c 'mkdir -p /tmp'
+[docker: exit=0 timeout=False duration_ms=56]
+$ docker cp /Users/karan/karan/projects/assignments/theta/examples/tiny/test.patch 4384d1aaf1713465c1524297e1f7f05828e7d0044d398c82f31fcdd52546512c:/tmp/taskbundle-test.patch
+[docker: exit=0 timeout=False duration_ms=21]
+$ docker exec 4384d1aaf1713465c1524297e1f7f05828e7d0044d398c82f31fcdd52546512c /bin/sh -c 'cd /workspace && git apply --check /tmp/taskbundle-test.patch && git apply /tmp/taskbundle-test.patch'
+[docker: exit=0 timeout=False duration_ms=50]
+$ docker exec 4384d1aaf1713465c1524297e1f7f05828e7d0044d398c82f31fcdd52546512c /bin/sh -c 'cd /workspace && python -m unittest tests.test_existing.DivideTests.test_regular_division'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[docker: exit=0 timeout=False duration_ms=175]
+$ docker exec 4384d1aaf1713465c1524297e1f7f05828e7d0044d398c82f31fcdd52546512c /bin/sh -c 'cd /workspace && python -m unittest tests.test_zero.DivideZeroTests.test_zero_raises'
+F
+======================================================================
+FAIL: test_zero_raises (tests.test_zero.DivideZeroTests.test_zero_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_zero.py", line 8, in test_zero_raises
+    with self.assertRaisesRegex(ValueError, "divisor must not be zero"):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+[docker: exit=1 timeout=False duration_ms=81]
+$ docker rm -f 4384d1aaf1713465c1524297e1f7f05828e7d0044d398c82f31fcdd52546512c
+4384d1aaf1713465c1524297e1f7f05828e7d0044d398c82f31fcdd52546512c
+[docker: exit=0 timeout=False duration_ms=50]
+$ docker create [redacted]
+415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331
+[docker: exit=0 timeout=False duration_ms=35]
+$ docker start 415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331
+415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331
+[docker: exit=0 timeout=False duration_ms=53]
+$ docker exec 415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331 /bin/sh -c 'cd /workspace && git reset --hard HEAD && git clean -fd'
+HEAD is now at 29ed89d Baseline with division bug
+[docker: exit=0 timeout=False duration_ms=52]
+$ docker exec 415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331 /bin/sh -c 'mkdir -p /tmp'
+[docker: exit=0 timeout=False duration_ms=48]
+$ docker cp /Users/karan/karan/projects/assignments/theta/examples/tiny/patch.diff 415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331:/tmp/taskbundle-gold.patch
+[docker: exit=0 timeout=False duration_ms=20]
+$ docker exec 415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331 /bin/sh -c 'cd /workspace && git apply --check /tmp/taskbundle-gold.patch && git apply /tmp/taskbundle-gold.patch'
+[docker: exit=0 timeout=False duration_ms=37]
+$ docker exec 415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331 /bin/sh -c 'mkdir -p /tmp'
+[docker: exit=0 timeout=False duration_ms=49]
+$ docker cp /Users/karan/karan/projects/assignments/theta/examples/tiny/test.patch 415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331:/tmp/taskbundle-test.patch
+[docker: exit=0 timeout=False duration_ms=16]
+$ docker exec 415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331 /bin/sh -c 'cd /workspace && git apply --check /tmp/taskbundle-test.patch && git apply /tmp/taskbundle-test.patch'
+[docker: exit=0 timeout=False duration_ms=42]
+$ docker exec 415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331 /bin/sh -c 'cd /workspace && python -m unittest tests.test_existing.DivideTests.test_regular_division'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[docker: exit=0 timeout=False duration_ms=172]
+$ docker exec 415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331 /bin/sh -c 'cd /workspace && python -m unittest tests.test_zero.DivideZeroTests.test_zero_raises'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[docker: exit=0 timeout=False duration_ms=75]
+$ docker rm -f 415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331
+415ee0a5da78c4a6e9e4f3cec67c593317cb878873314d44b09e37647c764331
+[docker: exit=0 timeout=False duration_ms=45]
+$ docker create [redacted]
+490261bbdd34f1b71e7d90a1f481fc8f353662343b93018594c7410efa578a62
+[docker: exit=0 timeout=False duration_ms=33]
+$ docker start 490261bbdd34f1b71e7d90a1f481fc8f353662343b93018594c7410efa578a62
+490261bbdd34f1b71e7d90a1f481fc8f353662343b93018594c7410efa578a62
+[docker: exit=0 timeout=False duration_ms=69]
+$ docker exec 490261bbdd34f1b71e7d90a1f481fc8f353662343b93018594c7410efa578a62 /bin/sh -c 'cd /workspace && git reset --hard HEAD && git clean -fd'
+HEAD is now at 29ed89d Baseline with division bug
+[docker: exit=0 timeout=False duration_ms=47]
+$ docker exec 490261bbdd34f1b71e7d90a1f481fc8f353662343b93018594c7410efa578a62 /bin/sh -c 'mkdir -p /tmp'
+[docker: exit=0 timeout=False duration_ms=56]
+$ docker cp /Users/karan/karan/projects/assignments/theta/examples/tiny/test.patch 490261bbdd34f1b71e7d90a1f481fc8f353662343b93018594c7410efa578a62:/tmp/taskbundle-test.patch
+[docker: exit=0 timeout=False duration_ms=22]
+$ docker exec 490261bbdd34f1b71e7d90a1f481fc8f353662343b93018594c7410efa578a62 /bin/sh -c 'cd /workspace && git apply --check /tmp/taskbundle-test.patch && git apply /tmp/taskbundle-test.patch'
+[docker: exit=0 timeout=False duration_ms=48]
+$ docker exec 490261bbdd34f1b71e7d90a1f481fc8f353662343b93018594c7410efa578a62 /bin/sh -c 'cd /workspace && python -m unittest tests.test_existing.DivideTests.test_regular_division'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[docker: exit=0 timeout=False duration_ms=178]
+$ docker exec 490261bbdd34f1b71e7d90a1f481fc8f353662343b93018594c7410efa578a62 /bin/sh -c 'cd /workspace && python -m unittest tests.test_zero.DivideZeroTests.test_zero_raises'
+F
+======================================================================
+FAIL: test_zero_raises (tests.test_zero.DivideZeroTests.test_zero_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_zero.py", line 8, in test_zero_raises
+    with self.assertRaisesRegex(ValueError, "divisor must not be zero"):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+[docker: exit=1 timeout=False duration_ms=75]
+$ docker rm -f 490261bbdd34f1b71e7d90a1f481fc8f353662343b93018594c7410efa578a62
+490261bbdd34f1b71e7d90a1f481fc8f353662343b93018594c7410efa578a62
+[docker: exit=0 timeout=False duration_ms=43]
+$ docker create [redacted]
+2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7
+[docker: exit=0 timeout=False duration_ms=30]
+$ docker start 2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7
+2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7
+[docker: exit=0 timeout=False duration_ms=61]
+$ docker exec 2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7 /bin/sh -c 'cd /workspace && git reset --hard HEAD && git clean -fd'
+HEAD is now at 29ed89d Baseline with division bug
+[docker: exit=0 timeout=False duration_ms=60]
+$ docker exec 2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7 /bin/sh -c 'mkdir -p /tmp'
+[docker: exit=0 timeout=False duration_ms=52]
+$ docker cp /Users/karan/karan/projects/assignments/theta/examples/tiny/patch.diff 2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7:/tmp/taskbundle-gold.patch
+[docker: exit=0 timeout=False duration_ms=21]
+$ docker exec 2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7 /bin/sh -c 'cd /workspace && git apply --check /tmp/taskbundle-gold.patch && git apply /tmp/taskbundle-gold.patch'
+[docker: exit=0 timeout=False duration_ms=48]
+$ docker exec 2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7 /bin/sh -c 'mkdir -p /tmp'
+[docker: exit=0 timeout=False duration_ms=47]
+$ docker cp /Users/karan/karan/projects/assignments/theta/examples/tiny/test.patch 2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7:/tmp/taskbundle-test.patch
+[docker: exit=0 timeout=False duration_ms=17]
+$ docker exec 2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7 /bin/sh -c 'cd /workspace && git apply --check /tmp/taskbundle-test.patch && git apply /tmp/taskbundle-test.patch'
+[docker: exit=0 timeout=False duration_ms=56]
+$ docker exec 2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7 /bin/sh -c 'cd /workspace && python -m unittest tests.test_existing.DivideTests.test_regular_division'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[docker: exit=0 timeout=False duration_ms=179]
+$ docker exec 2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7 /bin/sh -c 'cd /workspace && python -m unittest tests.test_zero.DivideZeroTests.test_zero_raises'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[docker: exit=0 timeout=False duration_ms=77]
+$ docker rm -f 2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7
+2e67cbd92b948c7ad3b0c65ed298098cc062ded9c49dbd483733e22ef911dfb7
+[docker: exit=0 timeout=False duration_ms=46]
+$ docker create [redacted]
+c29be493b1aff9d95065824810a52ff5bed4122ef918c391bb1ea92b972be26a
+[docker: exit=0 timeout=False duration_ms=31]
+$ docker start c29be493b1aff9d95065824810a52ff5bed4122ef918c391bb1ea92b972be26a
+c29be493b1aff9d95065824810a52ff5bed4122ef918c391bb1ea92b972be26a
+[docker: exit=0 timeout=False duration_ms=66]
+$ docker exec c29be493b1aff9d95065824810a52ff5bed4122ef918c391bb1ea92b972be26a /bin/sh -c 'cd /workspace && git reset --hard HEAD && git clean -fd'
+HEAD is now at 29ed89d Baseline with division bug
+[docker: exit=0 timeout=False duration_ms=53]
+$ docker exec c29be493b1aff9d95065824810a52ff5bed4122ef918c391bb1ea92b972be26a /bin/sh -c 'mkdir -p /tmp'
+[docker: exit=0 timeout=False duration_ms=49]
+$ docker cp /Users/karan/karan/projects/assignments/theta/examples/tiny/test.patch c29be493b1aff9d95065824810a52ff5bed4122ef918c391bb1ea92b972be26a:/tmp/taskbundle-test.patch
+[docker: exit=0 timeout=False duration_ms=22]
+$ docker exec c29be493b1aff9d95065824810a52ff5bed4122ef918c391bb1ea92b972be26a /bin/sh -c 'cd /workspace && git apply --check /tmp/taskbundle-test.patch && git apply /tmp/taskbundle-test.patch'
+[docker: exit=0 timeout=False duration_ms=65]
+$ docker exec c29be493b1aff9d95065824810a52ff5bed4122ef918c391bb1ea92b972be26a /bin/sh -c 'cd /workspace && python -m unittest tests.test_existing.DivideTests.test_regular_division'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[docker: exit=0 timeout=False duration_ms=181]
+$ docker exec c29be493b1aff9d95065824810a52ff5bed4122ef918c391bb1ea92b972be26a /bin/sh -c 'cd /workspace && python -m unittest tests.test_zero.DivideZeroTests.test_zero_raises'
+F
+======================================================================
+FAIL: test_zero_raises (tests.test_zero.DivideZeroTests.test_zero_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_zero.py", line 8, in test_zero_raises
+    with self.assertRaisesRegex(ValueError, "divisor must not be zero"):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+[docker: exit=1 timeout=False duration_ms=78]
+$ docker rm -f c29be493b1aff9d95065824810a52ff5bed4122ef918c391bb1ea92b972be26a
+c29be493b1aff9d95065824810a52ff5bed4122ef918c391bb1ea92b972be26a
+[docker: exit=0 timeout=False duration_ms=36]
+$ docker create [redacted]
+cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993
+[docker: exit=0 timeout=False duration_ms=30]
+$ docker start cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993
+cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993
+[docker: exit=0 timeout=False duration_ms=59]
+$ docker exec cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993 /bin/sh -c 'cd /workspace && git reset --hard HEAD && git clean -fd'
+HEAD is now at 29ed89d Baseline with division bug
+[docker: exit=0 timeout=False duration_ms=44]
+$ docker exec cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993 /bin/sh -c 'mkdir -p /tmp'
+[docker: exit=0 timeout=False duration_ms=47]
+$ docker cp /Users/karan/karan/projects/assignments/theta/examples/tiny/patch.diff cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993:/tmp/taskbundle-gold.patch
+[docker: exit=0 timeout=False duration_ms=19]
+$ docker exec cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993 /bin/sh -c 'cd /workspace && git apply --check /tmp/taskbundle-gold.patch && git apply /tmp/taskbundle-gold.patch'
+[docker: exit=0 timeout=False duration_ms=44]
+$ docker exec cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993 /bin/sh -c 'mkdir -p /tmp'
+[docker: exit=0 timeout=False duration_ms=55]
+$ docker cp /Users/karan/karan/projects/assignments/theta/examples/tiny/test.patch cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993:/tmp/taskbundle-test.patch
+[docker: exit=0 timeout=False duration_ms=19]
+$ docker exec cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993 /bin/sh -c 'cd /workspace && git apply --check /tmp/taskbundle-test.patch && git apply /tmp/taskbundle-test.patch'
+[docker: exit=0 timeout=False duration_ms=48]
+$ docker exec cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993 /bin/sh -c 'cd /workspace && python -m unittest tests.test_existing.DivideTests.test_regular_division'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[docker: exit=0 timeout=False duration_ms=177]
+$ docker exec cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993 /bin/sh -c 'cd /workspace && python -m unittest tests.test_zero.DivideZeroTests.test_zero_raises'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[docker: exit=0 timeout=False duration_ms=77]
+$ docker rm -f cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993
+cac7666b766861fc5b31baea79de3784300849d1b6897439928f836babea6993
+[docker: exit=0 timeout=False duration_ms=45]

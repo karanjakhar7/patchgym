@@ -1,0 +1,43 @@
+$ docker info --format '{{.ServerVersion}}'
+29.5.2
+[docker: exit=0 timeout=False duration_ms=125]
+$ docker create [redacted]
+a5fd1f558712d2c74a9cc593ce0c7acd5b8bb0c2d2e7dc8225da9f5420226a0a
+[docker: exit=0 timeout=False duration_ms=40]
+$ docker start a5fd1f558712d2c74a9cc593ce0c7acd5b8bb0c2d2e7dc8225da9f5420226a0a
+a5fd1f558712d2c74a9cc593ce0c7acd5b8bb0c2d2e7dc8225da9f5420226a0a
+[docker: exit=0 timeout=False duration_ms=78]
+$ docker exec a5fd1f558712d2c74a9cc593ce0c7acd5b8bb0c2d2e7dc8225da9f5420226a0a /bin/sh -c 'cd /workspace && git reset --hard HEAD && git clean -fd'
+HEAD is now at 6ac88b2 Add ordinary visible regression test
+[docker: exit=0 timeout=False duration_ms=49]
+$ docker exec a5fd1f558712d2c74a9cc593ce0c7acd5b8bb0c2d2e7dc8225da9f5420226a0a /bin/sh -c 'mkdir -p /tmp'
+[docker: exit=0 timeout=False duration_ms=42]
+$ docker cp /Users/karan/karan/projects/assignments/theta/examples/tiny/test.patch a5fd1f558712d2c74a9cc593ce0c7acd5b8bb0c2d2e7dc8225da9f5420226a0a:/tmp/taskbundle-test.patch
+[docker: exit=0 timeout=False duration_ms=19]
+$ docker exec a5fd1f558712d2c74a9cc593ce0c7acd5b8bb0c2d2e7dc8225da9f5420226a0a /bin/sh -c 'cd /workspace && git apply --check /tmp/taskbundle-test.patch && git apply /tmp/taskbundle-test.patch'
+[docker: exit=0 timeout=False duration_ms=47]
+$ docker exec a5fd1f558712d2c74a9cc593ce0c7acd5b8bb0c2d2e7dc8225da9f5420226a0a /bin/sh -c 'cd /workspace && python -m unittest tests.test_existing.DivideTests.test_regular_division'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+[docker: exit=0 timeout=False duration_ms=200]
+$ docker exec a5fd1f558712d2c74a9cc593ce0c7acd5b8bb0c2d2e7dc8225da9f5420226a0a /bin/sh -c 'cd /workspace && python -m unittest tests.test_zero.DivideZeroTests.test_zero_raises'
+F
+======================================================================
+FAIL: test_zero_raises (tests.test_zero.DivideZeroTests.test_zero_raises)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_zero.py", line 8, in test_zero_raises
+    with self.assertRaisesRegex(ValueError, "divisor must not be zero"):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+[docker: exit=1 timeout=False duration_ms=64]
+$ docker rm -f a5fd1f558712d2c74a9cc593ce0c7acd5b8bb0c2d2e7dc8225da9f5420226a0a
+a5fd1f558712d2c74a9cc593ce0c7acd5b8bb0c2d2e7dc8225da9f5420226a0a
+[docker: exit=0 timeout=False duration_ms=42]

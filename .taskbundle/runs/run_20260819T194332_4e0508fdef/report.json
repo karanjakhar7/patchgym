@@ -1,0 +1,60 @@
+{
+  "bundle_hash": "f954432d784e819e18b20d64f696274f93f8b8e3ee2d986db82a24f3b02d96e6",
+  "candidate_patch": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/run_20260819T194332_4e0508fdef/candidate.patch",
+  "command_id": "run_20260819T194332_4e0508fdef",
+  "error": null,
+  "evaluation_error": false,
+  "groups": {
+    "fail_to_pass": {
+      "error": [],
+      "failed": [],
+      "passed": [
+        "tests.test_zero.DivideZeroTests.test_zero_raises"
+      ],
+      "timeout": []
+    },
+    "pass_to_pass": {
+      "error": [],
+      "failed": [],
+      "passed": [
+        "tests.test_existing.DivideTests.test_regular_division"
+      ],
+      "timeout": []
+    }
+  },
+  "image_id": "sha256:b2a4b035d40ce06d8fab866f0bb9c8af8de8ed958d5a18c9035f5a19fa80f12d",
+  "patch_applied": true,
+  "resolved": true,
+  "schema_version": 1,
+  "solver": {
+    "duration_ms": 0,
+    "environment_names": [],
+    "exit_code": 0,
+    "kind": "patch",
+    "network_enabled": false,
+    "timed_out": false
+  },
+  "task_id": "tiny-divide-by-zero",
+  "tests": [
+    {
+      "duration_ms": 173,
+      "exit_code": 0,
+      "group": "pass_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/run_20260819T194332_4e0508fdef/candidate-1-tests.log",
+      "phase": "candidate",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "tests.test_existing.DivideTests.test_regular_division"
+    },
+    {
+      "duration_ms": 78,
+      "exit_code": 0,
+      "group": "fail_to_pass",
+      "log_path": "/Users/karan/karan/projects/assignments/theta/.taskbundle/runs/run_20260819T194332_4e0508fdef/candidate-1-tests.log",
+      "phase": "candidate",
+      "repetition": 1,
+      "status": "passed",
+      "test_id": "tests.test_zero.DivideZeroTests.test_zero_raises"
+    }
+  ]
+}
